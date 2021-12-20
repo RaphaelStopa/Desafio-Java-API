@@ -1,0 +1,20 @@
+:doctype: book
+:backend: html5
+:page-layout!: docs
+:toc: left
+:toclevels: 4
+:icons: font
+:sectanchors:
+:sectlinks:
+:sectnums:
+:linkattrs:
+:source-highlighter: highlightjs
+
+:includedir: .
+
+
+= Documentation challenge by Raphael Mendes Stopa.
+
+include::{includedir}/overview.adoc[]
+
+

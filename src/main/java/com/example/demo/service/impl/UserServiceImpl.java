@@ -109,7 +109,6 @@ public class UserServiceImpl implements UserService {
         if (userDTO.getEmail() != null) {
             newUser.setEmail(userDTO.getEmail().toLowerCase());
         }
-        newUser.setImageUrl(userDTO.getImageUrl());
         newUser.setLangKey(userDTO.getLangKey());
         // new user is not active
         newUser.setActivated(false);

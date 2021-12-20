@@ -1,4 +1,4 @@
-# Projeto Base de API em Java de Raphael Mendes Stopa
+# Projeto de API para desafio GFT Starter em Java de Raphael Mendes Stopa
 
 ## Rodando o projeto
 
@@ -18,21 +18,40 @@ Projeto com o Spring Security e JWT. Para pegar seu token, use no endpoint /api/
 ```
 Para o gerenciador use:
    {
-   "password": "admin",
-   "email": "admin@localhost"
+   "password": "Gft2021",
+   "login": "Admin"
    }
 
 
 Para o para o usuário comum use:
    {
    "password": "user",
-   "email": "user@localhost"
+   "login": "User"
    }
   
 ```
 Ainda é possível enviar o campo "rememberMe": true.
 
 Os dados estarão automaticamente no banco de dados graças ao liquibase.
+
+
+## Documentação
+Possui duvidas em relação a minha abordagem quanto a este projeto? Para isto, gerei uma documentação com Ascii que se encontra dentro das pastas do projeto.
+```
+src/docs/asciidocs
+```
+
+## Tarefas pedidas.
+- [X] Popular o banco (acontece já na inicialização).
+- [x] Ter dois perfis de acesso, um user e outro admin.
+- [x] CRUD de todas as entidades para o Admin.
+- [x] O usuário comum pode apenas ver os dados não sensíveis.
+- arrumar o lingin para usar o login
+
+## Tarefas excedentes realizadas.
+- [X] Validação de CPF.
+- [X] As rotas pedidas como excedentes, eu as juntei em grande parte, pois não há necessidade delas serem separadas. Usei o pageable e predicate para o consumidor desta api possa fazer as buscas que ele mesmo julgar necessárias, inclusive as pedidas. Isto é mais coerente e o Clécio no dia 20/12 permitiu tal uso. Duvidas? Veja nas docs os exemplos.
+
 
 ## OpenAPI/Swagger
 Este projeto possui uma documentação feita com OpenAPI. Para vê-la acesse: http://localhost:8080/swagger-ui/index.html
