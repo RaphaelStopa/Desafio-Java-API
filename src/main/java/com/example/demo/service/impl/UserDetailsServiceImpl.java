@@ -1,0 +1,59 @@
+package com.example.demo.service.impl;
+
+import com.example.demo.domain.Authority;
+import com.example.demo.repository.UserRepository;
+import com.example.demo.web.rest.vm.LoginVM;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.security.core.userdetails.User;
+
+import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+
+@Service
+public class UserDetailsServiceImpl implements UserDetailsService {
+    //equivale ao UserDetailsServiceImpl e DomainUserDetailsService, fiz um no mvc tambem
+
+
+    private UserRepository userRepository;
+
+    private PasswordEncoder passwordEncoder;
+
+    public UserDetailsServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    //TODO see if there's another way to fix it without the transitional
+    //tem que ser username aqui como nome do lace
+    @Transactional
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        com.example.demo.domain.User usuario = userRepository.findByEmail(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Email not found: " + username));
+
+        return User
+                .builder()
+                .username(usuario.getEmail())
+                .password(usuario.getPassword())
+                .authorities(mapToGrantedAuthorities(usuario.getAuthorities()))
+                .build();
+    }
+
+    private static List<GrantedAuthority> mapToGrantedAuthorities(Set<Authority> perfilEnum) {
+        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+        for (Authority authority: perfilEnum) {
+            authorities.add(new SimpleGrantedAuthority(authority.getName()));
+        }
+
+        return authorities;
+    }
+
+}

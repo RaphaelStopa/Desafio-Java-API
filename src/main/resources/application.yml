@@ -1,0 +1,38 @@
+spring:
+  devtools:
+    restart:
+      enabled: false
+      additional-exclude: static/**
+    livereload:
+      enabled: false
+    jackson:
+      serialization:
+        indent-output: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/GFT?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    username: gft
+    password: gft
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  liquibase:
+    change-log: classpath:config/liquibase/master.xml
+  thymeleaf:
+    cache: false
+
+jwt:
+  base64-secret: Bt/QODKYRe8T8SmBc7nbYSE2R2OmXmAnIfLo8IhrxsyNfcRT7H5OSLmWK9ByWEO/8c3FawOezLr1r5/2gzH1bx9G9oPgRQYeNkW/WC/3D/Mmi6mQ23ppsEcnqd2fwcKllW+9dmuUQqN2CsRT9scLoyRFQC5OdpCMxDz0TULs+pn7Rr+OdSfTeLaxNuTNIU9Pv11TQXzs0mZjs0lLhevCiEJKvjHlknLPVqc3lIto55wrL2P70wDQ6q0UY6k2XovCmi9uTt1dfXfxmYjZMojYFun1sId+WB6kSrflGjz/YmPaBN0aa6nSiUMGeHG6q6hJvHa1LbKDCz+r6TNQRJhb9w==
+  token-validity-in-seconds: 946080000
+  token-validity-in-seconds-for-remember-me: 946080000
+
+properties:
+  clientApp:
+    name: 'StopaApp'

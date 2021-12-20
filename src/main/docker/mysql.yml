@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  gft-mysql: # Here is the name of the docker created
+    image: mysql:8.0.23
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=gft
+      - MYSQL_USER=gft
+      - MYSQL_ROOT_PASSWORD=gft
+      - MYSQL_PASSWORD=gft
+    ports:
+      - 3306:3306
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp # Here, inside others, format the name to lower case
+
+# Just run this command in the terminal
+# docker-compose -f src/main/docker/mysql.yml up -d if you have configured the .env with the project name
+# If not, docker-compose -p “project_name” -f src/main/docker/mysql.yml up -d
+# important the file is in this directory
+#nome: mysql.yml
+# in intelij this is how the example connection is jdbc:mysql://localhost:3306/gft?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
