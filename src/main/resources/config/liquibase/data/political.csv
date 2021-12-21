@@ -8,4 +8,4 @@ id;name;cpf;elective_position_type;is_leader;political_party_id
 7;Paulo Ganime;6587521345841;CONGRESSMAN;false;5
 8;Ratinho Júnior;65238749823;GOVERNOR;false;7
 9;Zezinho do Povo;98564753268;CITY_COUNCILOR;false;4
-10;Marcos Cesar Pontes;87523654798;MINISTER;false;
+10;Marcos Cesar Pontes;87523654798;MINISTER;false;null
