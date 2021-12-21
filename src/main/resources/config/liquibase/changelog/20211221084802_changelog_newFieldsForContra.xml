@@ -1,0 +1,74 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="Stopa (generated)" id="1640026166466-8">
+        <addColumn tableName="address">
+            <column name="address_type" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-9">
+        <addColumn tableName="address">
+            <column name="city_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-10">
+        <addColumn tableName="political_party">
+            <column name="deleted" type="bit">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-11">
+        <addColumn tableName="political">
+            <column name="elective_position_type" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-12">
+        <addColumn tableName="political">
+            <column name="is_leader" type="bit">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-13">
+        <addColumn tableName="law_project">
+            <column name="law_project_type" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-14">
+        <addColumn tableName="phone">
+            <column name="phone_type" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-15">
+        <addColumn tableName="address">
+            <column name="political_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-16">
+        <addColumn tableName="law_project">
+            <column name="political_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-17">
+        <addColumn tableName="phone">
+            <column name="political_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-18">
+        <addColumn tableName="political">
+            <column name="political_party_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-19">
+        <addColumn tableName="city">
+            <column name="state_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-20">
+        <addColumn tableName="phone">
+            <column name="use_type" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

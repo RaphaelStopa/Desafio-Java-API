@@ -1,0 +1,24 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="Stopa (generated)" id="1640093114126-1">
+        <addNotNullConstraint columnDataType="bigint" columnName="political_id" tableName="law_project" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640093114126-2">
+        <addNotNullConstraint columnDataType="bigint" columnName="political_id" tableName="process" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640093114126-3">
+        <addNotNullConstraint columnDataType="bigint" columnName="political_id" tableName="phone" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640093114126-4">
+        <addNotNullConstraint columnDataType="bigint" columnName="political_id" tableName="law_project" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640093114126-5">
+        <addNotNullConstraint columnDataType="bigint" columnName="political_id" tableName="address" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640093114126-6">
+        <addNotNullConstraint columnDataType="bigint" columnName="city_id" tableName="address" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640093114126-7">
+        <addNotNullConstraint columnDataType="bigint" columnName="state_id" tableName="process" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

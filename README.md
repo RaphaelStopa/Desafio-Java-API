@@ -19,14 +19,14 @@ Projeto com o Spring Security e JWT. Para pegar seu token, use no endpoint /api/
 Para o gerenciador use:
    {
    "password": "Gft2021",
-   "login": "Admin"
+   "user": "Admin"
    }
-
+  
 
 Para o para o usuário comum use:
    {
    "password": "user",
-   "login": "User"
+   "user": "User"
    }
   
 ```

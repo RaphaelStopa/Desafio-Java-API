@@ -15,4 +15,18 @@
     <property name="datetimeType" value="datetime" dbms="oracle, mssql, postgresql, h2"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211220164603_added_entity_Political.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211220164948_added_entity_Address.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211220165112_added_entity_City.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211220165400_added_entity_State.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211220165639_added_entity_PoliticalParty.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211220170728_added_entity_Phone.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211220181458_added_entity_LawProject.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211221084802_changelog_newFieldsForContra.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211220205813_added_entity_Process.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211221092415_changelog_loadData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211221092536_changelog_constraint.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211221093751_changelog_processFields.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211221094351_changelog_processData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211221102506_changelog.xml" relativeToChangelogFile="false"/>
 </databaseChangeLog>

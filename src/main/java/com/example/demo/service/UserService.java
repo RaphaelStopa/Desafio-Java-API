@@ -12,6 +12,8 @@ public interface UserService {
 //    Optional<Planet> partialUpdate(Planet planet);
 //
     Page<User> findAll(Pageable pageable);
+
+    String findEmailByLogin(String email);
 //
 //    Optional<Planet> findOne(Long id);
 //

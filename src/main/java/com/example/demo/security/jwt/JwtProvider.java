@@ -38,6 +38,8 @@ public class JwtProvider {
             validity = new Date(now + this.tokenValidityInMilliseconds);
         }
 
+        System.out.println(authentication.getName());
+
         return Jwts
                 .builder()
                 .setSubject(authentication.getName())

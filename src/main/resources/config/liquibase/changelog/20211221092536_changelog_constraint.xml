@@ -1,0 +1,43 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet author="Stopa (generated)" id="1640026166466-21">
+        <addForeignKeyConstraint baseColumnNames="state_id" baseTableName="city" constraintName="FK6p2u50v8fg2y0js6djc6xanit" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="state" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-22">
+        <addForeignKeyConstraint baseColumnNames="political_id" baseTableName="law_project" constraintName="FKds7bc23olavo35fnx2a6i4cp9" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="political" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-23">
+        <addForeignKeyConstraint baseColumnNames="political_id" baseTableName="address" constraintName="FKjc2s98yna0spke589ro2p7xn2" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="political" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-24">
+        <addForeignKeyConstraint baseColumnNames="political_id" baseTableName="phone" constraintName="FKn23b5hriuxcdsn60ubvny4p68" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="political" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-25">
+        <addForeignKeyConstraint baseColumnNames="political_party_id" baseTableName="political" constraintName="FKn2p1gfmnsva73wrwubg3s553e" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="political_party" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-26">
+        <addForeignKeyConstraint baseColumnNames="city_id" baseTableName="address" constraintName="FKpo044ng5x4gynb291cv24vtea" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="city" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-1">
+        <addNotNullConstraint columnDataType="varchar(14)" columnName="cpf" tableName="political" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-2">
+        <addNotNullConstraint columnDataType="varchar(255)" columnName="name" tableName="city" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-3">
+        <addNotNullConstraint columnDataType="varchar(255)" columnName="name" tableName="political" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-4">
+        <addNotNullConstraint columnDataType="varchar(255)" columnName="name" tableName="political_party" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-5">
+        <addNotNullConstraint columnDataType="varchar(255)" columnName="number" tableName="law_project" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-6">
+        <addNotNullConstraint columnDataType="varchar(255)" columnName="number" tableName="phone" validate="true"/>
+    </changeSet>
+    <changeSet author="Stopa (generated)" id="1640026166466-7">
+        <addNotNullConstraint columnDataType="int" columnName="year" tableName="law_project" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

@@ -159,6 +159,12 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll(pageable);
     }
 
+    @Override
+    public String findEmailByLogin(String login) {
+        // todo soltar um trow nao precisa estoura sozinho
+        return userRepository.findOneByLogin(login).orElseThrow().getEmail();
+    };
+
 
 //    private static final String ENTITY_NAME = "forceUser";
 //
