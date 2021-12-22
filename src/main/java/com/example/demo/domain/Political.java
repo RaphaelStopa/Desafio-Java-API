@@ -4,6 +4,7 @@ import com.example.demo.domain.enumeration.ElectivePositionType;
 import lombok.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -16,7 +17,7 @@ import java.util.Set;
 @Entity
 @Table(name = "political")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder(toBuilder = true)
@@ -37,6 +38,7 @@ public class Political implements Serializable {
 
     @NotNull
     @Size(max = 14)
+    @CPF
     @Column(name = "cpf")
     private String cpf;
 
@@ -59,4 +61,8 @@ public class Political implements Serializable {
 
     @ManyToOne
     private PoliticalParty politicalParty;
+
+    @NotNull
+    @Column(nullable = false)
+    private boolean deleted = false;
 }

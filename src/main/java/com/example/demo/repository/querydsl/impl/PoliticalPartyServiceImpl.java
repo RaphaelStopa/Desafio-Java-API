@@ -36,16 +36,18 @@ public class PoliticalPartyServiceImpl implements PoliticalPartyService {
 
     @Override
     public Page<PoliticalParty> findAll(Pageable pageable) {
-        return repository.findAll(pageable);
+        return repository.findAllByDeletedFalse(pageable);
     }
 
     @Override
     public Optional<PoliticalParty> findOne(Long id) {
-        return repository.findById(id);
+        return repository.findByDeletedFalseAndId(id);
     }
 
     @Override
     public void delete(Long id) {
-        repository.deleteById(id);
+        var politicalParty = repository.findById(id).orElseThrow();
+        politicalParty.setDeleted(true);
+        repository.save(politicalParty);
     }
 }

@@ -26,8 +26,4 @@ public class PoliticalPartyDTO implements Serializable {
 
     @Size(max = 10)
     private String acronym;
-
-    @NotNull
-    private boolean deleted;
-
 }

@@ -1,11 +1,9 @@
 package com.example.demo.facade.dto;
 
-import com.example.demo.domain.Political;
 import com.example.demo.domain.enumeration.PhoneType;
 import com.example.demo.domain.enumeration.UseType;
 import lombok.*;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
@@ -16,7 +14,7 @@ import java.io.Serializable;
 @Builder(toBuilder = true)
 @Getter
 @Setter
-public class PhoneDTO implements Serializable {
+public class PhoneWithoutPoliticianDTO implements Serializable {
 
     private Long id;
 
@@ -26,7 +24,4 @@ public class PhoneDTO implements Serializable {
     private PhoneType phoneType;
 
     private UseType useType;
-
-    @NotNull
-    private PoliticalDTO political;
 }

@@ -16,7 +16,10 @@
                 <constraints nullable="true" />
             </column>
             <column name="cpf" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="false" unique="true"  />
+            </column>
+            <column name="deleted" type="boolean" valueBoolean="false">
+                <constraints nullable="false" />
             </column>
         </createTable>
     </changeSet>

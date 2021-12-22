@@ -79,7 +79,7 @@ public class PoliticalPartyResource {
         return ResponseEntity.ok().body(politicalPartyDTO);
     }
 
-    //I did the delete method, because it was a study, but within the context it doesn't make sense and it wouldn't be called
+    //it makes no sense to exclude a party but I did as requested.
     @DeleteMapping("/political-parties/{id}")
     public ResponseEntity<Void> deletePoliticalParty(@PathVariable Long id) {
         facade.delete(id);

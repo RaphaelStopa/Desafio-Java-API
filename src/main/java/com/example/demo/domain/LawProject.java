@@ -14,9 +14,9 @@ import java.io.Serializable;
 @Entity
 @Table(name = "law_project")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
+@EqualsAndHashCode
 @Builder(toBuilder = true)
 @Getter
 @Setter
@@ -34,7 +34,6 @@ public class LawProject implements Serializable {
     private String number;
 
     @NotNull
-    @Size(min = 4, max = 4)
     @Column(name = "year")
     private Integer year;
 
@@ -52,6 +51,7 @@ public class LawProject implements Serializable {
 
     @NotNull
     @ManyToOne
+    @EqualsAndHashCode.Exclude
     private Political political;
 
 }

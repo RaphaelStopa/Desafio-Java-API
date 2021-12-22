@@ -2,6 +2,7 @@ package com.example.demo.web.rest;
 
 import com.example.demo.facade.PoliticalFacade;
 import com.example.demo.facade.dto.PoliticalDTO;
+import com.example.demo.facade.dto.PoliticalToUpdateDTO;
 import com.example.demo.service.exceptions.BadRequestAlertException;
 import com.example.demo.util.HeaderUtil;
 import com.example.demo.util.PaginationUtil;
@@ -46,7 +47,7 @@ public class PoliticalResource {
     }
 
     @PatchMapping(value = "/politicians/{id}")
-    public ResponseEntity<PoliticalDTO> partialUpdatePolitical(
+    public ResponseEntity<PoliticalToUpdateDTO> partialUpdatePolitical(
             @PathVariable(value = "id", required = false) final Long id,
             @RequestBody PoliticalDTO politicalDTO
     ) {
@@ -57,7 +58,7 @@ public class PoliticalResource {
             throw new BadRequestAlertException("Invalid ID", ENTITY_NAME, "idinvalid");
         }
 
-        Optional<PoliticalDTO> result = facade.partialUpdate(politicalDTO);
+        Optional<PoliticalToUpdateDTO> result = facade.partialUpdate(politicalDTO);
         return ResponseEntity
                 .ok()
                 .headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).body(result.orElseThrow());
@@ -78,7 +79,7 @@ public class PoliticalResource {
         return ResponseEntity.ok().body(politicalDTO);
     }
 
-    //I did the delete method, because it was a study, but within the context it doesn't make sense and it wouldn't be called
+    //I made a soft delete because there is no reason to delete a policy, also delete its processes and projects. In fact, the method of excluding in some entities and only because it was asked
     @DeleteMapping("/politicians/{id}")
     public ResponseEntity<Void> deletePolitical(@PathVariable Long id) {
         facade.delete(id);

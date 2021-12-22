@@ -38,16 +38,18 @@ public class StateServiceImpl implements StateService {
 
     @Override
     public Page<State> findAll(Pageable pageable) {
-        return repository.findAll(pageable);
+        return repository.findAllByDeletedFalse(pageable);
     }
 
     @Override
     public Optional<State> findOne(@NotNull Long id) {
-        return repository.findById(id);
+        return repository.findByDeletedFalseAndId(id);
     }
 
     @Override
     public void delete(Long id) {
-        repository.deleteById(id);
+        var state = repository.findById(id).orElseThrow();
+        state.setDeleted(true);
+        repository.save(state);
     }
 }

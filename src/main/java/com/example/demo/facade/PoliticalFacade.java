@@ -2,6 +2,7 @@ package com.example.demo.facade;
 
 import com.example.demo.domain.Political;
 import com.example.demo.facade.dto.PoliticalDTO;
+import com.example.demo.facade.dto.PoliticalToUpdateDTO;
 import com.example.demo.facade.mapper.PoliticalMapper;
 import com.example.demo.service.PoliticalService;
 import org.slf4j.Logger;
@@ -35,7 +36,7 @@ public class PoliticalFacade {
         return mapper.toDto(political);
     }
 
-    public Optional<PoliticalDTO> partialUpdate(PoliticalDTO politicalDTO) {
+    public Optional<PoliticalToUpdateDTO> partialUpdate(PoliticalDTO politicalDTO) {
         log.debug("Request to partially update Political : {}", politicalDTO);
         return service
                 .findOne(politicalDTO.getId())
@@ -46,7 +47,7 @@ public class PoliticalFacade {
                         }
                 )
                 .map(service::save)
-                .map(mapper::toDto);
+                .map(mapper::toUpdateDto);
     }
 
     @Transactional(readOnly = true)

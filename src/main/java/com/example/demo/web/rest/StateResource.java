@@ -79,7 +79,7 @@ public class StateResource {
         return ResponseEntity.ok().body(stateDTO);
     }
 
-    //I did the delete method, because it was a study, but within the context it doesn't make sense and it wouldn't be called
+    //it doesn't make sense to delete a state but I did as requested.
     @DeleteMapping("/states/{id}")
     public ResponseEntity<Void> deleteState(@PathVariable Long id) {
         facade.delete(id);

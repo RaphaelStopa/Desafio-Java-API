@@ -79,7 +79,7 @@ public class CityResource {
         return ResponseEntity.ok().body(cityDTO);
     }
 
-    //I did the delete method, because it was a study, but within the context it doesn't make sense and it wouldn't be called
+    //same thing as the other deletes so I did the same scheme. It makes no sense to delete a city.
     @DeleteMapping("/cities/{id}")
     public ResponseEntity<Void> deleteCity(@PathVariable Long id) {
         facade.delete(id);

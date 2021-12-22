@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "address")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder(toBuilder = true)
@@ -55,6 +55,7 @@ public class Address implements Serializable {
 
     @NotNull
     @ManyToOne
+    @EqualsAndHashCode.Exclude
     private Political political;
 
 }

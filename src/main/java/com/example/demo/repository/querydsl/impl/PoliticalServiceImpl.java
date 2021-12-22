@@ -1,6 +1,8 @@
 package com.example.demo.repository.querydsl.impl;
 
 import com.example.demo.domain.Political;
+import com.example.demo.repository.AddressRepository;
+import com.example.demo.repository.PhoneRepository;
 import com.example.demo.repository.PoliticalRepository;
 import com.example.demo.service.PoliticalService;
 import com.example.demo.service.exceptions.BusinessException;
@@ -17,9 +19,14 @@ public class PoliticalServiceImpl implements PoliticalService {
     private static final String ENTITY_NAME = "political";
 
     private final PoliticalRepository repository;
+    private final AddressRepository addressRepository;
+    private final PhoneRepository phoneRepository;
 
-    public PoliticalServiceImpl(PoliticalRepository repository) {
+
+    public PoliticalServiceImpl(PoliticalRepository repository, AddressRepository addressRepository, PhoneRepository phoneRepository) {
         this.repository = repository;
+        this.addressRepository = addressRepository;
+        this.phoneRepository = phoneRepository;
     }
 
 
@@ -38,16 +45,21 @@ public class PoliticalServiceImpl implements PoliticalService {
 
     @Override
     public Page<Political> findAll(Pageable pageable) {
-        return repository.findAll(pageable);
+        return repository.findAllByDeletedFalse(pageable);
     }
 
     @Override
     public Optional<Political> findOne(@NotNull Long id) {
-        return repository.findById(id);
+        return repository.findByDeletedFalseAndId(id);
     }
 
     @Override
     public void delete(Long id) {
-        repository.deleteById(id);
+        var political = repository.findById(id).orElseThrow();
+        political.setDeleted(true);
+        repository.save(political);
+        addressRepository.deleteAll(political.getAddresses());
+        phoneRepository.deleteAll(political.getPhones());
+
     }
 }

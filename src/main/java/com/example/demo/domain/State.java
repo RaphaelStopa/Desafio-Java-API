@@ -37,4 +37,8 @@ public class State implements Serializable {
     @Column(name = "acronym")
     private String acronym;
 
+    @NotNull
+    @Column(nullable = false)
+    private boolean deleted = false;
+
 }

@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Builder(toBuilder = true)
 @Getter
 @Setter
-public class LawProjectDTO implements Serializable {
+public class LawProjectWithoutPoliticianDTO implements Serializable {
 
     private Long id;
 
@@ -30,7 +30,4 @@ public class LawProjectDTO implements Serializable {
     private String justification;
 
     private LawProjectType lawProjectType;
-
-    @NotNull
-    private PoliticalIdDTO political;
 }

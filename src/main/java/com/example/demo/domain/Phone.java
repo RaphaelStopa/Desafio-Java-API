@@ -14,8 +14,8 @@ import java.io.Serializable;
 @Entity
 @Table(name = "phone")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
+@EqualsAndHashCode
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder(toBuilder = true)
 @Getter
@@ -43,6 +43,7 @@ public class Phone implements Serializable {
 
     @NotNull
     @ManyToOne
+    @EqualsAndHashCode.Exclude
     private Political political;
 
 }

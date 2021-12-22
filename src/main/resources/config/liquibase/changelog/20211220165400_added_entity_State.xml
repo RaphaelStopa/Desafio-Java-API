@@ -18,6 +18,9 @@
             <column name="acronym" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
+            <column name="deleted" type="boolean" valueBoolean="false">
+                <constraints nullable="false" />
+            </column>
         </createTable>
     </changeSet>
 

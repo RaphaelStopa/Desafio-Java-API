@@ -38,16 +38,18 @@ public class CityServiceImpl implements CityService {
 
     @Override
     public Page<City> findAll(Pageable pageable) {
-        return repository.findAll(pageable);
+        return repository.findAllByDeletedFalse(pageable);
     }
 
     @Override
     public Optional<City> findOne(@NotNull Long id) {
-        return repository.findById(id);
+        return repository.findByDeletedFalseAndId(id);
     }
 
     @Override
     public void delete(Long id) {
-        repository.deleteById(id);
+        var city = repository.findById(id).orElseThrow();
+        city.setDeleted(true);
+        repository.save(city);
     }
 }

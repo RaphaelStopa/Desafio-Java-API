@@ -36,4 +36,8 @@ public class City implements Serializable {
     @ManyToOne(optional = false)
     private State state;
 
+    @NotNull
+    @Column(nullable = false)
+    private boolean deleted = false;
+
 }
