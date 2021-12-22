@@ -1,7 +1,7 @@
-package com.example.demo.facede.mapper;
+package com.example.demo.facade.mapper;
 
 import com.example.demo.domain.User;
-import com.example.demo.facede.dto.AdminUserDTO;
+import com.example.demo.facade.dto.AdminUserDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 

@@ -1,9 +1,5 @@
-package com.example.demo.facede.dto;
+package com.example.demo.facade.dto;
 
-
-import lombok.*;
-
-import java.io.Serializable;
 
 //@ToString
 //@EqualsAndHashCode

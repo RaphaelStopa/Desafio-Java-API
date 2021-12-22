@@ -1,4 +1,4 @@
-package com.example.demo.facede.dto;
+package com.example.demo.facade.dto;
 
 import java.time.Instant;
 import javax.validation.constraints.Email;

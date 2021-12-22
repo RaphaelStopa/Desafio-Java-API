@@ -1,0 +1,53 @@
+package com.example.demo.repository.querydsl.impl;
+
+import com.example.demo.domain.State;
+import com.example.demo.repository.StateRepository;
+import com.example.demo.service.StateService;
+import com.example.demo.service.exceptions.BusinessException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import javax.validation.constraints.NotNull;
+import java.util.Optional;
+
+@Service
+public class StateServiceImpl implements StateService {
+
+    private static final String ENTITY_NAME = "state";
+
+    private final StateRepository repository;
+
+    public StateServiceImpl(StateRepository repository) {
+        this.repository = repository;
+    }
+
+
+    @Override
+    public State save(State state) {
+        return repository.save(state);
+    }
+
+    @Override
+    public Optional<State> partialUpdate(State state) {
+        if (!repository.existsById(state.getId())) {
+            throw BusinessException.badRequest();
+        }
+        return Optional.of(repository.save(state));
+    }
+
+    @Override
+    public Page<State> findAll(Pageable pageable) {
+        return repository.findAll(pageable);
+    }
+
+    @Override
+    public Optional<State> findOne(@NotNull Long id) {
+        return repository.findById(id);
+    }
+
+    @Override
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+}

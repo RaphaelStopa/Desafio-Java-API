@@ -1,4 +1,4 @@
-package com.example.demo.facede.mapper;
+package com.example.demo.facade.mapper;
 
 import org.mapstruct.BeanMapping;
 import org.mapstruct.MappingTarget;

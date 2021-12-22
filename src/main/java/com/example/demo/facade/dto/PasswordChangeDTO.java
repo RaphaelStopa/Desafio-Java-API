@@ -1,4 +1,4 @@
-package com.example.demo.facede.dto;
+package com.example.demo.facade.dto;
 
 
 public class PasswordChangeDTO {

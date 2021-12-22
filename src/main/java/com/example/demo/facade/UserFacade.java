@@ -1,7 +1,7 @@
-package com.example.demo.facede;
+package com.example.demo.facade;
 
-import com.example.demo.facede.dto.AdminUserDTO;
-import com.example.demo.facede.mapper.UserMapper;
+import com.example.demo.facade.dto.AdminUserDTO;
+import com.example.demo.facade.mapper.UserMapper;
 import com.example.demo.service.UserService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

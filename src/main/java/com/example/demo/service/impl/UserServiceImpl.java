@@ -2,7 +2,7 @@ package com.example.demo.service.impl;
 
 import com.example.demo.domain.Authority;
 import com.example.demo.domain.User;
-import com.example.demo.facede.dto.AdminUserDTO;
+import com.example.demo.facade.dto.AdminUserDTO;
 import com.example.demo.repository.AuthorityRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.repository.querydsl.UserQueryRepository;
