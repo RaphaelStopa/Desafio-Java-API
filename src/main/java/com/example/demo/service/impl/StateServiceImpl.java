@@ -1,4 +1,4 @@
-package com.example.demo.repository.querydsl.impl;
+package com.example.demo.service.impl;
 
 import com.example.demo.domain.State;
 import com.example.demo.repository.StateRepository;
