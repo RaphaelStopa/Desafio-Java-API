@@ -14,8 +14,6 @@ import java.util.Optional;
 @Service
 public class CityServiceImpl implements CityService {
 
-    private static final String ENTITY_NAME = "city";
-
     private final CityRepository repository;
 
     public CityServiceImpl(CityRepository repository) {
@@ -26,14 +24,6 @@ public class CityServiceImpl implements CityService {
     @Override
     public City save(City city) {
         return repository.save(city);
-    }
-
-    @Override
-    public Optional<City> partialUpdate(City city) {
-        if (!repository.existsById(city.getId())) {
-            throw BusinessException.badRequest();
-        }
-        return Optional.of(repository.save(city));
     }
 
     @Override

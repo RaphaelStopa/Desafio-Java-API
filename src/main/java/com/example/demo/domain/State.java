@@ -19,6 +19,7 @@ import java.io.Serializable;
 @Builder(toBuilder = true)
 @Getter
 @Setter
+@ToString
 public class State implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -9,8 +9,6 @@ import java.util.Optional;
 public interface CityService {
     City save(City city);
 
-    Optional<City> partialUpdate(City city);
-
     Page<City> findAll(Pageable pageable);
 
     Optional<City> findOne(Long id);
