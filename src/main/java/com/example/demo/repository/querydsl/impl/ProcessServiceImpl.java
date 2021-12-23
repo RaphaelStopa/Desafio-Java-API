@@ -29,13 +29,6 @@ public class ProcessServiceImpl implements ProcessService {
         return repository.save(process);
     }
 
-    @Override
-    public Optional<Process> partialUpdate(Process process) {
-        if (!repository.existsById(process.getId())) {
-            throw BusinessException.badRequest();
-        }
-        return Optional.of(repository.save(process));
-    }
 
     @Override
     public Page<Process> findAll(Pageable pageable) {

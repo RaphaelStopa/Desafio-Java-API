@@ -27,14 +27,6 @@ public class PoliticalPartyServiceImpl implements PoliticalPartyService {
     }
 
     @Override
-    public Optional<PoliticalParty> partialUpdate(PoliticalParty politicalParty) {
-        if (!repository.existsById(politicalParty.getId())) {
-            throw BusinessException.badRequest();
-        }
-        return Optional.of(repository.save(politicalParty));
-    }
-
-    @Override
     public Page<PoliticalParty> findAll(Pageable pageable) {
         return repository.findAllByDeletedFalse(pageable);
     }

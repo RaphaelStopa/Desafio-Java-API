@@ -29,14 +29,6 @@ public class LawProjectServiceImpl implements LawProjectService {
     }
 
     @Override
-    public Optional<LawProject> partialUpdate(LawProject lawProject) {
-        if (!repository.existsById(lawProject.getId())) {
-            throw BusinessException.badRequest();
-        }
-        return Optional.of(repository.save(lawProject));
-    }
-
-    @Override
     public Page<LawProject> findAll(Pageable pageable) {
         return repository.findAll(pageable);
     }

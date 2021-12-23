@@ -10,8 +10,6 @@ public interface StateService {
 
     State save(State state);
 
-    Optional<State> partialUpdate(State state);
-
     Page<State> findAll(Pageable pageable);
 
     Optional<State> findOne(Long id);

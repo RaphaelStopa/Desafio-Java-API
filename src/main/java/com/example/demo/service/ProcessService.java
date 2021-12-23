@@ -10,8 +10,6 @@ import java.util.Optional;
 public interface ProcessService {
     Process save(Process process);
 
-    Optional<Process> partialUpdate(Process process);
-
     Page<Process> findAll(Pageable pageable);
 
     Optional<Process> findOne(Long id);

@@ -9,8 +9,6 @@ import java.util.Optional;
 public interface LawProjectService {
     LawProject save(LawProject lawProject);
 
-    Optional<LawProject> partialUpdate(LawProject lawProject);
-
     Page<LawProject> findAll(Pageable pageable);
 
     Optional<LawProject> findOne(Long id);

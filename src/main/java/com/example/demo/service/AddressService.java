@@ -8,9 +8,6 @@ import java.util.Optional;
 
 public interface AddressService {
     Address save(Address address);
-
-    Optional<Address> partialUpdate(Address address);
-
     Page<Address> findAll(Pageable pageable);
 
     Optional<Address> findOne(Long id);

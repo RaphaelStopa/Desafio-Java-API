@@ -9,8 +9,6 @@ import java.util.Optional;
 public interface PoliticalService {
     Political save(Political political);
 
-    Optional<Political> partialUpdate(Political political);
-
     Page<Political> findAll(Pageable pageable);
 
     Optional<Political> findOne(Long id);

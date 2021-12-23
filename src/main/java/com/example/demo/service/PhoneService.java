@@ -9,8 +9,6 @@ import java.util.Optional;
 public interface PhoneService {
     Phone save(Phone phone);
 
-    Optional<Phone> partialUpdate(Phone phone);
-
     Page<Phone> findAll(Pageable pageable);
 
     Optional<Phone> findOne(Long id);

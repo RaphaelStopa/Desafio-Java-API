@@ -29,14 +29,6 @@ public class StateServiceImpl implements StateService {
     }
 
     @Override
-    public Optional<State> partialUpdate(State state) {
-        if (!repository.existsById(state.getId())) {
-            throw BusinessException.badRequest();
-        }
-        return Optional.of(repository.save(state));
-    }
-
-    @Override
     public Page<State> findAll(Pageable pageable) {
         return repository.findAllByDeletedFalse(pageable);
     }

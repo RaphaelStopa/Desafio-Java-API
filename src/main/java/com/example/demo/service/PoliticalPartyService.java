@@ -10,8 +10,6 @@ public interface PoliticalPartyService {
 
     PoliticalParty save(PoliticalParty politicalParty);
 
-    Optional<PoliticalParty> partialUpdate(PoliticalParty politicalParty);
-
     Page<PoliticalParty> findAll(Pageable pageable);
 
     Optional<PoliticalParty> findOne(Long id);

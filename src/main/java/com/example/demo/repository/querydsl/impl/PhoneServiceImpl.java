@@ -28,13 +28,6 @@ public class PhoneServiceImpl implements PhoneService {
         return repository.save(phone);
     }
 
-    @Override
-    public Optional<Phone> partialUpdate(Phone phone) {
-        if (!repository.existsById(phone.getId())) {
-            throw BusinessException.badRequest();
-        }
-        return Optional.of(repository.save(phone));
-    }
 
     @Override
     public Page<Phone> findAll(Pageable pageable) {

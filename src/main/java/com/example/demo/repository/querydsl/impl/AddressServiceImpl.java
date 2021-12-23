@@ -28,14 +28,6 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public Optional<Address> partialUpdate(Address address) {
-        if (!repository.existsById(address.getId())) {
-            throw BusinessException.badRequest();
-        }
-        return Optional.of(repository.save(address));
-    }
-
-    @Override
     public Page<Address> findAll(Pageable pageable) {
         return repository.findAll(pageable);
     }
