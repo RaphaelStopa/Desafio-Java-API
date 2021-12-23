@@ -57,6 +57,7 @@ public class Political implements Serializable {
     private Set<LawProject> lawProjects = new HashSet<>();
 
     @OneToMany(mappedBy = "political")
+    @EqualsAndHashCode.Exclude
     private Set<Phone> phones = new HashSet<>();
 
     @ManyToOne

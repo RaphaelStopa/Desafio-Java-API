@@ -31,7 +31,7 @@ public class ProcessDTO implements Serializable {
     private ProcessStatus processStatus;
 
     @NotNull
-    private PoliticalDTO political;
+    private PoliticalIdDTO political;
 
     private StateDTO state;
 

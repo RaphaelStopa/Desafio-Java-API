@@ -28,5 +28,5 @@ public class PhoneDTO implements Serializable {
     private UseType useType;
 
     @NotNull
-    private PoliticalDTO political;
+    private PoliticalIdDTO political;
 }

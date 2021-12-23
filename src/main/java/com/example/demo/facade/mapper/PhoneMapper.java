@@ -6,7 +6,7 @@ import com.example.demo.facade.dto.PhoneDTO;
 import com.example.demo.facade.dto.PoliticalToUpdateDTO;
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring", uses = {PoliticalMapper.class})
+@Mapper(componentModel = "spring", uses = {PoliticalIdMapper.class})
 public interface PhoneMapper extends EntityMapper<PhoneDTO, Phone>  {
 
 }

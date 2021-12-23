@@ -39,7 +39,7 @@ public class PoliticalDTO implements Serializable {
     @NotNull
     private boolean isLeader;
 
-    private Set<AddressDTO> addresses;
+    private Set<AddressWithoutPoliticianDTO> addresses;
 
     private Set<LawProjectWithoutPoliticianDTO> lawProjects;
 
