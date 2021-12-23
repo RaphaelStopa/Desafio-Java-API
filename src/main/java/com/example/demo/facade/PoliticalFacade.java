@@ -2,9 +2,11 @@ package com.example.demo.facade;
 
 import com.example.demo.domain.Political;
 import com.example.demo.facade.dto.PoliticalDTO;
+import com.example.demo.facade.dto.PoliticalForUserDTO;
 import com.example.demo.facade.dto.PoliticalToUpdateDTO;
 import com.example.demo.facade.mapper.PoliticalMapper;
 import com.example.demo.service.PoliticalService;
+import com.querydsl.core.types.Predicate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -49,6 +51,12 @@ public class PoliticalFacade {
                 .map(service::save)
                 .map(mapper::toUpdateDto);
     }
+
+
+    public Page<PoliticalForUserDTO> findAllForUser(Pageable pageable, Predicate predicate, Long numberOfLaws) {
+        return service.findAllForUser(pageable, predicate, numberOfLaws).map(mapper::toUserDto);
+    }
+
 
     @Transactional(readOnly = true)
     public Page<PoliticalDTO> findAll(Pageable pageable) {

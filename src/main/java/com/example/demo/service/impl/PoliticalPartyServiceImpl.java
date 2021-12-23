@@ -3,6 +3,7 @@ package com.example.demo.service.impl;
 import com.example.demo.domain.PoliticalParty;
 import com.example.demo.repository.PoliticalPartyRepository;
 import com.example.demo.service.PoliticalPartyService;
+import com.example.demo.service.exceptions.BadRequestAlertException;
 import com.example.demo.service.exceptions.BusinessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -23,6 +24,18 @@ public class PoliticalPartyServiceImpl implements PoliticalPartyService {
 
     @Override
     public PoliticalParty save(PoliticalParty politicalParty) {
+        if (politicalParty.getId() == null) {
+            if(repository.existsByName(politicalParty.getName())) {
+                throw new BadRequestAlertException("this name already exists", ENTITY_NAME, "already existing");
+            }
+        } else {
+            var checkState =  repository.findById(politicalParty.getId()).orElseThrow();
+            if (!checkState.getName().equals(politicalParty.getName())){
+                if(repository.existsByName(politicalParty.getName())) {
+                    throw new BadRequestAlertException("this name already exists", ENTITY_NAME, "already existing");
+                }
+            }
+        }
         return repository.save(politicalParty);
     }
 

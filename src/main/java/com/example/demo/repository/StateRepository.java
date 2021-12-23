@@ -16,4 +16,8 @@ public interface StateRepository extends JpaRepository<State, Long> {
     Page<State> findAllByDeletedFalse(Pageable pageable);
 
     Optional<State> findByDeletedFalseAndId(Long id);
+
+    boolean existsByName(String name);
+
+    boolean existsByAcronym(String cronym);
 }

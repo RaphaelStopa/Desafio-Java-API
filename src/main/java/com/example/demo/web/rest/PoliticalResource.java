@@ -1,14 +1,19 @@
 package com.example.demo.web.rest;
 
+import com.example.demo.domain.Political;
 import com.example.demo.facade.PoliticalFacade;
 import com.example.demo.facade.dto.PoliticalDTO;
+import com.example.demo.facade.dto.PoliticalForUserDTO;
 import com.example.demo.facade.dto.PoliticalToUpdateDTO;
+import com.example.demo.repository.querydsl.impl.PoliticalQueryRepositoryImpl;
 import com.example.demo.service.exceptions.BadRequestAlertException;
 import com.example.demo.util.HeaderUtil;
 import com.example.demo.util.PaginationUtil;
+import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.querydsl.binding.QuerydslPredicate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,8 +35,11 @@ public class PoliticalResource {
 
     private final PoliticalFacade facade;
 
-    public PoliticalResource(PoliticalFacade facade) {
+    private final PoliticalQueryRepositoryImpl politicalQueryRepository;
+
+    public PoliticalResource(PoliticalFacade facade, PoliticalQueryRepositoryImpl politicalQueryRepository) {
         this.facade = facade;
+        this.politicalQueryRepository = politicalQueryRepository;
     }
 
     @PostMapping("/politicians")
@@ -66,8 +74,25 @@ public class PoliticalResource {
 
 
     @GetMapping("/politicians")
-    public ResponseEntity<Page<PoliticalDTO>> getAllPoliticians(Pageable pageable) {
+    public ResponseEntity<Page<PoliticalDTO>> getAllPoliticiansForAdmin(Pageable pageable) {
         Page<PoliticalDTO> page = facade.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        return ResponseEntity.ok().headers(headers).body(page);
+    }
+
+
+    ///api/{cargos}/asc Listar os Candidatos em ordem alfabética crescente por nome
+    ////politicians/users?electivePositionType=CARGO&sort=name,desc
+    ///api/{cargos}/desc Listar os Candidato em ordem alfabética decrescente por nome
+    ////politicians/users?electivePositionType=CARGO&sort=name,asc
+    ///api/{cargos}/{id} Buscar Candidato por id
+    ///politicians/users?electivePositionType=CARGO&id={id}
+    ///api/{cargos}/leis/{qnt}Filtrar pelo numero de Projetos de leis que o candidato trabalhou
+    ///politicians/users/{numberOfLaws}?electivePositionType=CARGO
+
+    @GetMapping(value = {"/politicians/users/{numberOfLaws}", "/politicians/users"})
+    public ResponseEntity<Page<PoliticalForUserDTO>> getAllPoliticians(Pageable pageable, @QuerydslPredicate(root = Political.class) Predicate predicate, @PathVariable(value = "numberOfLaws", required = false) final Long numberOfLaws) {
+        Page<PoliticalForUserDTO> page = facade.findAllForUser(pageable, predicate, numberOfLaws);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page);
     }

@@ -16,4 +16,6 @@ public interface PoliticalPartyRepository extends JpaRepository<PoliticalParty, 
 
     Optional<PoliticalParty> findByDeletedFalseAndId(Long id);
 
+    boolean existsByName(String name);
+
 }
