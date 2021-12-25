@@ -5,11 +5,18 @@ import com.example.demo.repository.PoliticalPartyRepository;
 import com.example.demo.service.PoliticalPartyService;
 import com.example.demo.service.exceptions.BadRequestAlertException;
 import com.example.demo.service.exceptions.BusinessException;
+import liquibase.util.file.FilenameUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Optional;
+
+import static org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric;
 
 @Service
 public class PoliticalPartyServiceImpl implements PoliticalPartyService {
@@ -55,4 +62,5 @@ public class PoliticalPartyServiceImpl implements PoliticalPartyService {
         politicalParty.setDeleted(true);
         repository.save(politicalParty);
     }
+
 }

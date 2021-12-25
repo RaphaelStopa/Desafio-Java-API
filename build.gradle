@@ -99,6 +99,7 @@ dependencies {
 	//implentei no application.yml
 	implementation "com.zaxxer:HikariCP"
 
+
 //	implementation "io.dropwizard.metrics:metrics-core"
 //	implementation "io.micrometer:micrometer-registry-prometheus"
 

@@ -66,4 +66,7 @@ public class Political implements Serializable {
     @NotNull
     @Column(nullable = false)
     private boolean deleted = false;
+
+    @OneToMany(mappedBy = "political")
+    private Set<Photo> photos = new HashSet<>();
 }

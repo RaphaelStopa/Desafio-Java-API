@@ -1,6 +1,5 @@
 package com.example.demo.web.rest;
 import com.example.demo.domain.User;
-import com.example.demo.facade.UserFacade;
 import com.example.demo.facade.dto.PasswordChangeDTO;
 
 import com.example.demo.repository.querydsl.impl.UserQueryRepositoryImpl;

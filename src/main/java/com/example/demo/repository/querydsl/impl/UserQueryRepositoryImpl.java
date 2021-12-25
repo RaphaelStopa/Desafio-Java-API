@@ -39,24 +39,6 @@ public class UserQueryRepositoryImpl extends JpaQuerydslBaseRepository<Long, Use
         bindings.bind(root.id).all(ExpressionProviderFactory::getPredicate);
         bindings.bind(root.login).all(ExpressionProviderFactory::getPredicate);
         bindings.bind(root.activated).first(BooleanExpression::eq);
-//        bindings.bind(root.sectors.any().id).all(ExpressionProviderFactory::getPredicate);
-
-//        bindings
-//                .bind(String.class)
-//                .first(
-//                        (SingleValueBinding<StringPath, String>) (path, value) -> {
-//                            BooleanBuilder predicate = new BooleanBuilder();
-//                            predicate.or(root.login.likeIgnoreCase(like(value)));
-//                            predicate.or(root.firstName.likeIgnoreCase(like(value)));
-//                            predicate.or(root.lastName.likeIgnoreCase(like(value)));
-//                            predicate.or(root.email.likeIgnoreCase(like(value)));
-//                            predicate.or(root.sectors.any().name.likeIgnoreCase(like(value)));
-//                            if (isParsable(value)) {
-//                                predicate.or(root.sectors.any().id.eq(Long.valueOf(value)));
-//                            }
-//                            return predicate;
-//                        }
-//                );
     }
     @Override
     public <S extends User> List<S> saveAllAndFlush(Iterable<S> entities) {
