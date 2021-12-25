@@ -17,7 +17,7 @@ public interface PhotoService {
 
     Page<Photo> findAll(Pageable pageable);
 
-    String findOne(Long id) throws IOException;
+    byte[] findOne(Long id) throws IOException;
 
     void delete(Long id);
 }

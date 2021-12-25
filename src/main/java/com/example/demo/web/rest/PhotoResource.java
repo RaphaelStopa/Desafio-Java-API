@@ -80,7 +80,7 @@ public class PhotoResource {
 
     //aqui fazer voltar a base 64
     @GetMapping("/photos/{id}")
-    public ResponseEntity<String> getPhone(@PathVariable Long id) throws IOException {
+    public ResponseEntity<byte[]> getPhone(@PathVariable Long id) throws IOException {
         var photoDTO = facade.findOne(id);
         return ResponseEntity.ok().body(photoDTO);
     }

@@ -71,10 +71,9 @@ public class PhotoServiceImpl implements PhotoService {
     }
 
     @Override
-    public String findOne(Long id) throws IOException {
+    public byte[] findOne(Long id) throws IOException {
         File file = new File(repository.findById(id).orElseThrow().getUrl());
-
-        return Base64.getEncoder().encodeToString(Files.readAllBytes(file.toPath()));
+        return Files.readAllBytes(file.toPath());
     }
 
     @Override

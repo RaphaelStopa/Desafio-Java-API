@@ -25,7 +25,6 @@ import javax.validation.Valid;
 @RequestMapping("/api")
 public class AccountResource {
 
-    private final UserFacade facade;
 
     private final UserServiceImpl userServiceImpl;
 
@@ -33,8 +32,7 @@ public class AccountResource {
     //mas este eh so um exemplo
     private final UserQueryRepositoryImpl userQueryRepository;
 
-    public AccountResource(UserFacade facade, UserServiceImpl userServiceImpl, UserQueryRepositoryImpl userQueryRepository) {
-        this.facade = facade;
+    public AccountResource(UserServiceImpl userServiceImpl, UserQueryRepositoryImpl userQueryRepository) {
         this.userServiceImpl = userServiceImpl;
         this.userQueryRepository = userQueryRepository;
     }

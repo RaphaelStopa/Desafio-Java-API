@@ -48,7 +48,7 @@ public class PhotoFacade {
 
 
     @Transactional(readOnly = true)
-    public String findOne(Long id) throws IOException {
+    public byte[] findOne(Long id) throws IOException {
         log.debug("Request to get Photo : {}", id);
         return service.findOne(id);
     }
