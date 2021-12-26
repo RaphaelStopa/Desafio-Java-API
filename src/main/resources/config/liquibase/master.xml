@@ -30,4 +30,5 @@
     <include file="config/liquibase/changelog/20211221094351_changelog_processData.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20211221102506_changelog.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20211223143420_added_entity_Photo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211223144535_added_data_Photo.xml" relativeToChangelogFile="false"/>
 </databaseChangeLog>

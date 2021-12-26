@@ -14,11 +14,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.querydsl.binding.QuerydslPredicate;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.constraints.Size;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Objects;
@@ -81,17 +83,18 @@ public class PoliticalResource {
     }
 
 
+    // TODO esta errtado esto aqui, ajeitar no readme tambem
     ///api/{cargos}/asc Listar os Candidatos em ordem alfabética crescente por nome
-    ////politicians/users?electivePositionType=CARGO&sort=name,desc
-    ///api/{cargos}/desc Listar os Candidato em ordem alfabética decrescente por nome
     ////politicians/users?electivePositionType=CARGO&sort=name,asc
+    ///api/{cargos}/desc Listar os Candidato em ordem alfabética decrescente por nome
+    ////politicians/users?electivePositionType=CARGO&sort=name,desc
     ///api/{cargos}/{id} Buscar Candidato por id
     ///politicians/users?electivePositionType=CARGO&id={id}
     ///api/{cargos}/leis/{qnt}Filtrar pelo numero de Projetos de leis que o candidato trabalhou
     ///politicians/users/{numberOfLaws}?electivePositionType=CARGO
 
     @GetMapping(value = {"/politicians/users/{numberOfLaws}", "/politicians/users"})
-    public ResponseEntity<Page<PoliticalForUserDTO>> getAllPoliticians(Pageable pageable, @QuerydslPredicate(root = Political.class) Predicate predicate, @PathVariable(value = "numberOfLaws", required = false) final Long numberOfLaws) {
+    public ResponseEntity<Page<PoliticalForUserDTO>> getAllPoliticians(@PageableDefault(size = 2000, sort = "name") Pageable pageable, @QuerydslPredicate(root = Political.class) Predicate predicate, @PathVariable(value = "numberOfLaws", required = false) final Long numberOfLaws) {
         Page<PoliticalForUserDTO> page = facade.findAllForUser(pageable, predicate, numberOfLaws);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page);

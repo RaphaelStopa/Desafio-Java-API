@@ -25,7 +25,7 @@ public class LawProjectResource {
     @Value("${properties.clientApp.name}")
     private String applicationName;
 
-    private static final String ENTITY_NAME = "planet";
+    private static final String ENTITY_NAME = "lawProject";
 
     private final LawProjectFacade facade;
 

@@ -48,7 +48,7 @@ public class PhotoServiceImpl implements PhotoService {
             photo.setContentType(imageFile.getContentType());
             photo.setFileName(fileName);
             //explicar isto aqui
-            photo.setUrl(path.toString());
+            photo.setUrl("/src/main/resources/static/img/" + fileName);
             photo.setPolitical(politicalServiceImpl.findOne(id).orElseThrow());
 
             return repository.save(photo);
@@ -72,13 +72,13 @@ public class PhotoServiceImpl implements PhotoService {
 
     @Override
     public byte[] findOne(Long id) throws IOException {
-        File file = new File(repository.findById(id).orElseThrow().getUrl());
+        File file = new File(System.getProperty("user.dir") + repository.findById(id).orElseThrow().getUrl());
         return Files.readAllBytes(file.toPath());
     }
 
     @Override
     public void delete(Long id) {
-        File file = new File(repository.findById(id).orElseThrow().getUrl());
+        File file = new File(System.getProperty("user.dir") + repository.findById(id).orElseThrow().getUrl());
         file.delete();
         repository.deleteById(id);
     }
