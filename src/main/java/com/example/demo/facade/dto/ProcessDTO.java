@@ -1,11 +1,9 @@
 package com.example.demo.facade.dto;
 
-import com.example.demo.domain.Political;
-import com.example.demo.domain.State;
+
 import com.example.demo.domain.enumeration.ProcessStatus;
 import lombok.*;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 

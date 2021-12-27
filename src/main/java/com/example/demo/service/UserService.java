@@ -7,17 +7,7 @@ import org.springframework.data.domain.Pageable;
 
 public interface UserService {
 
-//    Planet save(Planet planet);
-//
-//    Optional<Planet> partialUpdate(Planet planet);
-//
     Page<User> findAll(Pageable pageable);
 
     String findEmailByLogin(String email);
-//
-//    Optional<Planet> findOne(Long id);
-//
-//    void checkByName(String name);
-//
-//    void delete(Long id);
 }

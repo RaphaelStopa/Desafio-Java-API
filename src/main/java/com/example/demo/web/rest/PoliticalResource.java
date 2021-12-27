@@ -5,7 +5,6 @@ import com.example.demo.facade.PoliticalFacade;
 import com.example.demo.facade.dto.PoliticalDTO;
 import com.example.demo.facade.dto.PoliticalForUserDTO;
 import com.example.demo.facade.dto.PoliticalToUpdateDTO;
-import com.example.demo.repository.querydsl.impl.PoliticalQueryRepositoryImpl;
 import com.example.demo.service.exceptions.BadRequestAlertException;
 import com.example.demo.util.HeaderUtil;
 import com.example.demo.util.PaginationUtil;
@@ -17,10 +16,11 @@ import org.springframework.data.querydsl.binding.QuerydslPredicate;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.validation.constraints.Size;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Objects;
@@ -37,14 +37,12 @@ public class PoliticalResource {
 
     private final PoliticalFacade facade;
 
-    private final PoliticalQueryRepositoryImpl politicalQueryRepository;
-
-    public PoliticalResource(PoliticalFacade facade, PoliticalQueryRepositoryImpl politicalQueryRepository) {
+    public PoliticalResource(PoliticalFacade facade) {
         this.facade = facade;
-        this.politicalQueryRepository = politicalQueryRepository;
     }
 
     @PostMapping("/politicians")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     public ResponseEntity<PoliticalDTO> createPolitical(@RequestBody PoliticalDTO politicalDTO) throws URISyntaxException {
         if (politicalDTO.getId() != null) {
             throw new BadRequestAlertException("A new Political cannot already have an ID", ENTITY_NAME, "idexists");
@@ -57,6 +55,7 @@ public class PoliticalResource {
     }
 
     @PatchMapping(value = "/politicians/{id}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     public ResponseEntity<PoliticalToUpdateDTO> partialUpdatePolitical(
             @PathVariable(value = "id", required = false) final Long id,
             @RequestBody PoliticalDTO politicalDTO
@@ -76,6 +75,7 @@ public class PoliticalResource {
 
 
     @GetMapping("/politicians")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     public ResponseEntity<Page<PoliticalDTO>> getAllPoliticiansForAdmin(Pageable pageable) {
         Page<PoliticalDTO> page = facade.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
@@ -94,6 +94,7 @@ public class PoliticalResource {
     ///politicians/users/{numberOfLaws}?electivePositionType=CARGO
 
     @GetMapping(value = {"/politicians/users/{numberOfLaws}", "/politicians/users"})
+    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
     public ResponseEntity<Page<PoliticalForUserDTO>> getAllPoliticians(@PageableDefault(size = 2000, sort = "name") Pageable pageable, @QuerydslPredicate(root = Political.class) Predicate predicate, @PathVariable(value = "numberOfLaws", required = false) final Long numberOfLaws) {
         Page<PoliticalForUserDTO> page = facade.findAllForUser(pageable, predicate, numberOfLaws);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
@@ -102,6 +103,7 @@ public class PoliticalResource {
 
 
     @GetMapping("/politicians/{id}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     public ResponseEntity<PoliticalDTO> getPolitical(@PathVariable Long id) {
         var politicalDTO = facade.findOne(id);
         return ResponseEntity.ok().body(politicalDTO);
@@ -109,6 +111,7 @@ public class PoliticalResource {
 
     //I made a soft delete because there is no reason to delete a policy, also delete its processes and projects. In fact, the method of excluding in some entities and only because it was asked
     @DeleteMapping("/politicians/{id}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     public ResponseEntity<Void> deletePolitical(@PathVariable Long id) {
         facade.delete(id);
         return ResponseEntity

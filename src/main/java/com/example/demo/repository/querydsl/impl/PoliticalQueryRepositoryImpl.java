@@ -2,11 +2,9 @@ package com.example.demo.repository.querydsl.impl;
 
 import com.example.demo.domain.Political;
 import com.example.demo.domain.QPolitical;
-import com.example.demo.domain.QUser;
-import com.example.demo.domain.User;
+
 import com.example.demo.repository.JpaQuerydslBaseRepository;
 import com.example.demo.repository.querydsl.PoliticalQueryRepository;
-import com.example.demo.repository.querydsl.UserQueryRepository;
 import com.querydsl.core.types.Predicate;
 import org.bitbucket.gt_tech.spring.data.querydsl.value.operators.ExpressionProviderFactory;
 import org.springframework.data.domain.Page;
@@ -15,7 +13,6 @@ import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;
 import org.springframework.data.querydsl.binding.QuerydslBindings;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,12 +21,6 @@ public class PoliticalQueryRepositoryImpl extends JpaQuerydslBaseRepository<Long
 
 
     private static final QPolitical $ = QPolitical.political;
-
-    private final EntityManager em;
-
-    public PoliticalQueryRepositoryImpl(EntityManager em) {
-        this.em = em;
-    }
 
 
 

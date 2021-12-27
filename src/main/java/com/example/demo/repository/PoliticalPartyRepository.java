@@ -1,7 +1,6 @@
 package com.example.demo.repository;
 
 
-import com.example.demo.domain.Political;
 import com.example.demo.domain.PoliticalParty;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

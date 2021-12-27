@@ -3,7 +3,6 @@ package com.example.demo.web.rest;
 import com.example.demo.facade.PhotoFacade;
 import com.example.demo.facade.dto.PhotoDTO;
 import com.example.demo.service.exceptions.BadRequestAlertException;
-import com.example.demo.service.impl.PhotoServiceImpl;
 import com.example.demo.util.HeaderUtil;
 import com.example.demo.util.PaginationUtil;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,11 +29,8 @@ public class PhotoResource {
 
     private final PhotoFacade facade;
 
-    private final PhotoServiceImpl photoService;
-
-    public PhotoResource(PhotoFacade facade, PhotoServiceImpl photoService) {
+    public PhotoResource(PhotoFacade facade) {
         this.facade = facade;
-        this.photoService = photoService;
     }
 
     @PostMapping("/photos")

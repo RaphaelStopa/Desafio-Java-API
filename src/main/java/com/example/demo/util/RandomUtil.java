@@ -1,12 +1,10 @@
 package com.example.demo.util;
 
 import java.security.SecureRandom;
-import java.security.SecureRandom;
 import org.apache.commons.lang3.RandomStringUtils;
 
 
 public class RandomUtil {
-    private static final int DEF_COUNT = 20;
     private static final SecureRandom SECURE_RANDOM = new SecureRandom();
 
     private RandomUtil() {

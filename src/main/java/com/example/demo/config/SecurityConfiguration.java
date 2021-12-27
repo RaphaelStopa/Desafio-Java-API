@@ -43,10 +43,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         httpSecurity
                 .csrf()
                 .disable()
-                // todo tem que ajustar aqui por questoes obvias
+                // todo escrever no base que a ordem importa!!!!!!
                 .authorizeRequests()
                 .antMatchers("/api/authenticate/**").permitAll()
                 .antMatchers("/api/register/**").permitAll()
+                .antMatchers("/api/adresses/**").hasRole("ADMIN")
+                .antMatchers("/api/cities/**").hasRole("ADMIN")
+                .antMatchers("/api/law-projects/**").hasRole("ADMIN")
+                .antMatchers("/api/phones/**").hasRole("ADMIN")
+                .antMatchers("/api/photos/**").hasRole("ADMIN")
+                .antMatchers("/api/political-parties/**").hasRole("ADMIN")
+                .antMatchers("/api/processes/**").hasRole("ADMIN")
+                .antMatchers("/api/states/**").hasRole("ADMIN")
+                .antMatchers("/api/states/**").hasRole("ADMIN")
                 .antMatchers("/api/**").authenticated()
                 .and()
                 .sessionManagement()

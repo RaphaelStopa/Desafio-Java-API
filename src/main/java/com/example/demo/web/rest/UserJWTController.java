@@ -47,8 +47,6 @@ public class UserJWTController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtProvider.createToken(authentication, loginVM.isRememberMe());
         HttpHeaders httpHeaders = new HttpHeaders();
-        // todo
-//        httpHeaders.add(JWTFilter.AUTHORIZATION_HEADER, "Bearer " + jwt);
         return new ResponseEntity<>(new JWTToken(jwt), httpHeaders, HttpStatus.OK);
 
     }

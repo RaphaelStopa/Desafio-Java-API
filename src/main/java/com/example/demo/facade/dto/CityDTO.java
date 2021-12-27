@@ -1,9 +1,7 @@
 package com.example.demo.facade.dto;
 
-import com.example.demo.domain.State;
 import lombok.*;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
