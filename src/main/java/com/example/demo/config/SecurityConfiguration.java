@@ -71,9 +71,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers(OPTIONS, "/**")
                 .antMatchers("/i18n/**")
                 .antMatchers("/content/**")
-                //this part is important for Swagger / OpenAPI
                 .antMatchers("/swagger-ui/**")
-                //this is just for guarantee
                 .antMatchers("/v2/api-docs", "/configuration/ui",
                         "/swagger-resources/**", "/configuration/**", "/swagger-ui.html"
                         , "/webjars/**", "/csrf")
