@@ -1,0 +1,11 @@
+id;name;cpf;deleted;elective_position_type;is_leader;political_party_id
+1;Eduardo Girão;12348567862;false;SENATOR;false;1
+2;Marcos do Val;81316517952;false;SENATOR;false;1
+3;Daniella Ribeiro;84332479512;false;SENATOR;false;2
+4;Carlos Portinho;84613657462;false;SENATOR;false;3
+5;Rodrigo Coelho;84513365479;false;CONGRESSMAN;false;1
+6;Daniel Trzeciak;24687945368;false;CONGRESSMAN;false;4
+7;Paulo Ganime;6587521345841;false;CONGRESSMAN;false;5
+8;Ratinho Júnior;65238749823;false;GOVERNOR;false;7
+9;Zezinho do Povo;98564753268;false;CITY_COUNCILOR;false;4
+10;Marcos Cesar Pontes;87523654798;false;MINISTER;false;null

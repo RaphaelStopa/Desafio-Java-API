@@ -39,12 +39,6 @@ public final class SecurityUtils {
             .map(authentication -> (String) authentication.getCredentials());
     }
 
-    //todo tem coisa errada aqui
-    public static boolean isAuthenticated() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        return authentication != null && getAuthorities(authentication).noneMatch(AuthoritiesConstants.ANONYMOUS::equals);
-    }
-
     public static boolean hasCurrentUserAnyOfAuthorities(String... authorities) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return (

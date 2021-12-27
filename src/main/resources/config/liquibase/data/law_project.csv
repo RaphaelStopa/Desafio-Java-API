@@ -1,0 +1,11 @@
+id;number;year;text;justification;law_project_type;political_id
+1;0005002-31.2014.6.26.0000/65376;2021;Projeto 1;Projeto para X e tal;DETERMINES;1
+2;800167/144/10/13723;2020;Projeto 2;Projeto visa Y e tal;ADD;6
+3;800168/144/10/56012;2021;Projeto 3;Projeto que atende bla e tal;DETERMINES;2
+4;800169/144/10/38513;2021;Projeto 4;Projeto de N para C;CHANGES;2
+5;840/026/07/8449;2019;Projeto 5;Projeto para P em T;ADD;7
+6;23437/026/99/44476;2019;Projeto 6;Projeto para fazer U;DETERMINES;1
+7;027335/026/04/76147;2019;Projeto 7;Projeto para YZR;ADD;8
+8;2556/003/10/98323;2020;Projeto 8;Projeto para fazer a coisa toda;CHANGES;4
+9;1185/003/12/94172;2021;Projeto 9;Projeto para ajustar H;CHANGES;9
+10;671/003/11/7563;2018;Projeto 10;Projeto para ajustar P;DETERMINES;10

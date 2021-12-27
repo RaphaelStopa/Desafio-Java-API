@@ -2,7 +2,7 @@ package com.example.demo.service.impl;
 
 import com.example.demo.domain.Authority;
 import com.example.demo.domain.User;
-import com.example.demo.facede.dto.AdminUserDTO;
+import com.example.demo.facade.dto.AdminUserDTO;
 import com.example.demo.repository.AuthorityRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.repository.querydsl.UserQueryRepository;
@@ -158,6 +158,12 @@ public class UserServiceImpl implements UserService {
     public Page<User> findAll(Pageable pageable) {
         return userRepository.findAll(pageable);
     }
+
+    @Override
+    public String findEmailByLogin(String login) {
+        // todo soltar um trow nao precisa estoura sozinho
+        return userRepository.findOneByLogin(login).orElseThrow().getEmail();
+    };
 
 
 //    private static final String ENTITY_NAME = "forceUser";

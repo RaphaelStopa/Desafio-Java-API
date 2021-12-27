@@ -1,0 +1,6 @@
+[[state]]
+= State
+
+ Estamos trabalhando apenas em território nacional, ou seja, o número de estados seria fixo, com pouca chance de mudança em qualquer aspecto. Mesmo dentre este contexto, foi feito um CRUD para estas atividades na tentativa de manter o conceito do briefing.
+
+[[state-general]]

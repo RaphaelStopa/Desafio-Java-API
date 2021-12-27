@@ -1,0 +1,8 @@
+[[political]]
+= Political
+
+ Os tipos de políticos foram abstraídos para uma forma mais genérica e viraram esta entidade. São definidos por seu campo electivePositionType. Por uma questão de atomicidade, os campos de endereço, telefone, partido, projeto de lei processos e fotos viraram outras tabelas. Se tem dúvidas quanto a necessidade de cada uma, veja a sessão separada para a mesma.
+
+ Para esta atividade, considerei como dados sensíveis o endereço, telefone, CPF (apesar de provavelmente ser facilmente achado em outros sites, não vi a necessidade de passar por aqui) e processos. Este último, normalmente não é considerado uma informação sensível, já que o comum é um processo ser público. Todavia, na incerteza do objetivo da razão de ter a tabela processos nesta atividade e de como ela seria alimentada e por quem, optei por não os mostrar, visto que alguns processos podem, dentre outras coisas, conter sigilos.
+
+[[political-general]]

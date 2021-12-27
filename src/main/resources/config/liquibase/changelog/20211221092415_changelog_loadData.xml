@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="20211122173026-1" author="Stopa">
+        <loadData
+            file="config/liquibase/data/political_party.csv"
+            separator=";"
+            tableName="political_party">
+        </loadData>
+    </changeSet>
+
+    <changeSet id="20211122173026-2" author="Stopa">
+        <loadData
+            file="config/liquibase/data/political.csv"
+            separator=";"
+            tableName="political">
+        </loadData>
+    </changeSet>
+
+    <changeSet id="20211122173026-3" author="Stopa">
+        <loadData
+            file="config/liquibase/data/state.csv"
+            separator=";"
+            tableName="state">
+        </loadData>
+    </changeSet>
+
+    <changeSet id="20211122173026-4" author="Stopa">
+        <loadData
+            file="config/liquibase/data/phone.csv"
+            separator=";"
+            tableName="phone">
+        </loadData>
+    </changeSet>
+    <changeSet id="20211122173026-5" author="Stopa">
+        <loadData
+            file="config/liquibase/data/law_project.csv"
+            separator=";"
+            tableName="law_project">
+        </loadData>
+    </changeSet>
+
+    <changeSet id="20211122173026-6" author="Stopa">
+        <loadData
+            file="config/liquibase/data/city.csv"
+            separator=";"
+            tableName="city">
+        </loadData>
+    </changeSet>
+    <changeSet id="20211122173026-7" author="Stopa">
+        <loadData
+            file="config/liquibase/data/address.csv"
+            separator=";"
+            tableName="address">
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

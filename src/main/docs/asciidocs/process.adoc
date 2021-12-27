@@ -1,0 +1,6 @@
+[[process]]
+= Process
+
+ Processos mesmo em sigilo, tem corte definida e numero então assim foi feito. A ideia é ir atualizando a medida que o processo sofre mudanças, assim sendo, ele tem um status para isto e também diz a corte que está e o estado desta corte.
+
+[[process-general]]

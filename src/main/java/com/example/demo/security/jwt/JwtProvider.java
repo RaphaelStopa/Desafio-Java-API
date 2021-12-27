@@ -37,7 +37,6 @@ public class JwtProvider {
         } else {
             validity = new Date(now + this.tokenValidityInMilliseconds);
         }
-
         return Jwts
                 .builder()
                 .setSubject(authentication.getName())

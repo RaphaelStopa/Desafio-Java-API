@@ -1,0 +1,6 @@
+[[phone]]
+= Phone
+
+ A lógica do endereço também se aplica ao telefone. Achei importante separar todos os tipos possíveis de telefones.
+
+[[phone-general]]

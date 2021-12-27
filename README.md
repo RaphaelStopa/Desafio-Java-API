@@ -13,20 +13,20 @@ Na primeira inicialização, pode demorar um pouco. Por favor, seja paciente. De
 
 ## Atenção
 
-Projeto com o Spring Security e JWT. Para pegar seu token, use no endpoint /api/authenticate os seguintes Jsons:
+Projeto com o Spring Security e JWT. Para pegar seu token, use no endpoint /api/authenticate os seguintes JSons:
 
 ```
 Para o gerenciador use:
    {
    "password": "Gft2021",
-   "login": "Admin"
+   "user": "Admin"
    }
-
+  
 
 Para o para o usuário comum use:
    {
    "password": "user",
-   "login": "User"
+   "user": "User"
    }
   
 ```
@@ -44,23 +44,33 @@ src/docs/asciidocs
 ## Tarefas pedidas.
 - [X] Popular o banco (acontece já na inicialização).
 - [x] Ter dois perfis de acesso, um user e outro admin.
+- [x] Ter duas APIs, uma (para o user) consumidora.
 - [x] CRUD de todas as entidades para o Admin.
-- [x] O usuário comum pode apenas ver os dados não sensíveis.
-- arrumar o lingin para usar o login
+- [x] O usuário comum (por meio de sua API) pode apenas ver os dados não sensíveis.
+
 
 ## Tarefas excedentes realizadas.
-- [X] Validação de CPF.
-- [X] As rotas pedidas como excedentes, eu as juntei em grande parte, pois não há necessidade delas serem separadas. Usei o pageable e predicate para o consumidor desta api possa fazer as buscas que ele mesmo julgar necessárias, inclusive as pedidas. Isto é mais coerente e o Clécio no dia 20/12 permitiu tal uso. Duvidas? Veja nas docs os exemplos.
+- [X] Validação de CPF (automática via @CPF).
+- [X] As rotas pedidas como excedentes, eu as juntei em grande parte, pois não há necessidade delas serem separadas. Usei o pageable e predicate para o consumidor desta api possa fazer as buscas que ele mesmo julgar necessárias, inclusive as pedidas. Isto é mais coerente e o Clécio no dia 20/12 permitiu tal uso. Segue abaixo cada uma delas e como são chamadas.
 
-
-## OpenAPI/Swagger
-Este projeto possui uma documentação feita com OpenAPI. Para vê-la acesse: http://localhost:8080/swagger-ui/index.html
+/api/{cargos}/asc Listar os Candidatos em ordem alfabética crescente por nome
+```
+/politicians/users?electivePositionType=CARGO&sort=name,desc
+```
+/api/{cargos}/desc Listar os Candidato em ordem alfabética decrescente por nome
+```
+/politicians/users?electivePositionType=CARGO&sort=name,asc
+```
+/api/{cargos}/{id} Buscar Candidato por id
+```
+/politicians/users?electivePositionType=CARGO&id={id}
+```
+/api/{cargos}/leis/{qnt}Filtrar pelo numero de Projetos de leis que o candidato trabalhou
+```
+/politicians/users/{numberOfLaws}?electivePositionType=CARGO
+```
 
 ## Outras features
 * Querys com type safety usando QueryDsl.
 * Mappers com mapstruct.
 * Erros expostos com zalando.
-* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-* Falta caches e validacoes automaticas do userFalta caches e validacoes automaticas do userFalta caches e validacoes automaticas do userFalta caches e validacoes automaticas do userFalta caches e validacoes automaticas do userFalta caches e validacoes automaticas do userFalta caches e validacoes automaticas do userFalta caches e validacoes automaticas do userFalta caches e validacoes automaticas do user
-
-ARRUMAR SWAGGER, ELE NAO TEM A OPCAO DE AUTENTICAR. fALTA OS CADIADINHOAS AI A REQUISISAO DA SEMPRE NEGADO AAAAAAAAA

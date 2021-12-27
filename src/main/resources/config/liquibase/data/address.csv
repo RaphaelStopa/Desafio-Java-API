@@ -1,0 +1,20 @@
+id;street;number;zipcode;district;complement;address_type;city_id;political_id
+1;General Alfredo;84;69900000;Guatupe;Casa;PRIMARY;1;1
+2;Epitafio Jacomel;213;35912358;Ipe;Casa;PRIMARY;2;2
+3;XV de novembro;612;64832113;Costeira;Apartamento;PRIMARY;3;3
+4;Andrade Gomes;1200;87652135;Centro;Casa;PRIMARY;4;4
+5;Herminda da Rocha Barbosa;13;68582364;Centro;Casa;SECONDARY;5;5
+6;Visconde Andrade;75684563;785;São Pedro;Casa;PRIMARY;6;6
+7;Professor Mario Ceppas;326;84653213;Cidade Jardim;Casa;PRIMARY;7;7
+8;Padre Alberto Muller;478;89756456;Bigorrilho;Apartamento;SECONDARY;8;8
+9;Liberdade;486;65443217;Centro;Casa;PRIMARY;9;9
+10;São José;636;69900888;Guatupe;Casa;PRIMARY;10;10
+11;São Paulo;876;35882358;Ipe;Casa;PRIMARY;3;5
+12;Santo Antônio;336;62232113;Costeira;Apartamento;PRIMARY;3;3
+13;Avenida Brasil;124;87653895;Centro;Casa;PRIMARY;4;4
+14;São Pedro;326;68582123;Centro;Casa;SECONDARY;5;5
+15;São João;234;78484563;São Pedro;Casa;PRIMARY;6;6
+16;Sete de Setembro;784;43653213;Cidade Jardim;Casa;PRIMARY;7;7
+17;Tiradentes;89756421;326;Bigorrilho;Apartamento;SECONDARY;8;8
+18;Champs Elysees;3265;68463217;Centro;Casa;PRIMARY;9;9
+

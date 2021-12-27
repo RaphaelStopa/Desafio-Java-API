@@ -1,0 +1,6 @@
+[[address]]
+= Address
+
+ O endereço virou outras 3 tabelas. Primeiramente porque um politico pode ter mais de um endereço, alias é esperado isto. Segundo, foi feito uma tabela de cidade e estado. A tabela de país não foi feita para não prolongar ainda mais atividade, e o conceito inicial é apenas para políticos brasileiros.
+
+[[address-general]]

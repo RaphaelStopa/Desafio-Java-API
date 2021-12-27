@@ -1,0 +1,4 @@
+id;content_type;file_name;url;political_id
+1;image/png;another.png;/src/main/resources/static/img/another.png;1
+2;image/jpg;download.jpg;/src/main/resources/static/img/download.jpg;2
+3;image/jpg;gft.jpg;/src/main/resources/static/img/gft.jpg;3

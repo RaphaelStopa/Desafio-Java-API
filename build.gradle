@@ -99,10 +99,20 @@ dependencies {
 	//implentei no application.yml
 	implementation "com.zaxxer:HikariCP"
 
+
 //	implementation "io.dropwizard.metrics:metrics-core"
 //	implementation "io.micrometer:micrometer-registry-prometheus"
 
 	implementation 'org.bitbucket.gt_tech:spring-data-querydsl-value-operators:4.0.0'
+
+
+	implementation 'org.springframework.boot:spring-boot-starter-validation:2.6.1'
+
+
+
+
+	implementation "org.hibernate:hibernate-core"
+
 }
 
 test {

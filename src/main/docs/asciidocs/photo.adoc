@@ -1,0 +1,8 @@
+[[photo]]
+= Photo
+
+ Existe vários jeitos de tratar fotos no backend. No caso a aplicação do campo url pode mudar de acordo com abordagem escolhida, para este estudo coloquei o path da foto em caminho absoluto para poder recuperar ela por lá.
+
+ Mantendo o briefing, fiz todo o CRUD, com a diferença que na rota para pegar uma foto especifica, ela retorna uma array de bytes da foto.
+
+[[photo-general]]

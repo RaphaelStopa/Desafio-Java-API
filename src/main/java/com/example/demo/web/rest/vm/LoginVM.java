@@ -1,16 +1,18 @@
 package com.example.demo.web.rest.vm;
 
-import javax.persistence.Column;
-import javax.validation.constraints.Email;
+import com.example.demo.config.Constants;
+
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 
 public class LoginVM {
 
-    @Email
-    @Size(min = 5, max = 254)
-    private String email;
+    @NotNull
+    @Pattern(regexp = Constants.LOGIN_REGEX)
+    @Size(min = 1, max = 50)
+    private String user;
 
     @NotNull
     @Size(min = 4, max = 100)
@@ -18,12 +20,12 @@ public class LoginVM {
 
     private boolean rememberMe;
 
-    public String getEmail() {
-        return email;
+    public String getUser() {
+        return user;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public String getPassword() {
@@ -45,7 +47,7 @@ public class LoginVM {
     @Override
     public String toString() {
         return "LoginVM{" +
-                "email='" + email + '\'' +
+                "user='" + user + '\'' +
                 ", password='" + password + '\'' +
                 ", rememberMe=" + rememberMe +
                 '}';

@@ -1,0 +1,11 @@
+id;number;court;brief_context;political_id;state_id;status
+1;0005002-31.2014.6.26.0000;TRE;Responde por X;1;1;JUDGED
+2;800168/144/10;TCE;Contas de campanha supostamente irregular;2;2;IN_PROGRESS
+3;800169/144/10;TCE;Recebeu valores de fonte nao declarada;3;3;FILED
+4;800167/144/10;TCE;Aconteceu Y;4;4;FILED
+5;840/026/07;TCE;Aconteceu X;5;5;IN_PROGRESS
+6;23437/026/99;TCE;Proprina em forma de X;6;6;JUDGED
+7;4392;STF;Proprina em forma de X;7;7;IN_PROGRESS
+8;4387;STF;Proprina em forma de X;8;8;IN_PROGRESS
+9;4377;STF;Proprina em forma de X;1;1;IN_PROGRESS
+10;5077;STF;Proprina em forma de Y;9;9;IN_PROGRESS

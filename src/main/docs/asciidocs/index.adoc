@@ -17,4 +17,18 @@
 
 include::{includedir}/overview.adoc[]
 
+include::{includedir}/political.adoc[]
+
+include::{includedir}/process.adoc[]
+
+include::{includedir}/address.adoc[]
+
+include::{includedir}/state.adoc[]
+
+include::{includedir}/phone.adoc[]
+
+include::{includedir}/photo.adoc[]
+
+include::{includedir}/process.adoc[]
+
 

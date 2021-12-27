@@ -1,7 +1,7 @@
 package com.example.demo.web.rest.vm;
 
 
-import com.example.demo.facede.dto.AdminUserDTO;
+import com.example.demo.facade.dto.AdminUserDTO;
 
 import javax.validation.constraints.Size;
 
