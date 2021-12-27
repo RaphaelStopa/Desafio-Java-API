@@ -18,7 +18,6 @@ public class PhoneWithoutPoliticianDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
     private String number;
 
     private PhoneType phoneType;

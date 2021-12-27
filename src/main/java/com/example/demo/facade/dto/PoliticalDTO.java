@@ -21,16 +21,12 @@ public class PoliticalDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
     private String name;
 
-    @NotNull
-    @Size(max = 14)
     private String cpf;
 
     private ElectivePositionType electivePositionType;
 
-    @NotNull
     private boolean isLeader;
 
     private Set<AddressWithoutPoliticianDTO> addresses;

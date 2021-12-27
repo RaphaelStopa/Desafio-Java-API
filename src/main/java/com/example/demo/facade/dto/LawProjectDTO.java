@@ -18,11 +18,8 @@ public class LawProjectDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
     private String number;
 
-    @NotNull
-    @Size(min = 4, max = 4)
     private Integer year;
 
     private String text;
@@ -31,6 +28,5 @@ public class LawProjectDTO implements Serializable {
 
     private LawProjectType lawProjectType;
 
-    @NotNull
     private PoliticalIdDTO political;
 }

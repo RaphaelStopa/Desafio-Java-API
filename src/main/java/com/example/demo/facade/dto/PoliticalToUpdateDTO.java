@@ -18,16 +18,12 @@ public class PoliticalToUpdateDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
     private String name;
 
-    @NotNull
-    @Size(max = 14)
     private String cpf;
 
     private ElectivePositionType electivePositionType;
 
-    @NotNull
     private boolean isLeader;
 
     private PoliticalPartyDTO politicalParty;

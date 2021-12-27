@@ -18,13 +18,11 @@ public class PhoneDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
     private String number;
 
     private PhoneType phoneType;
 
     private UseType useType;
 
-    @NotNull
     private PoliticalIdDTO political;
 }

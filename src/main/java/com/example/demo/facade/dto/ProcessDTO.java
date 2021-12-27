@@ -18,17 +18,14 @@ public class ProcessDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
     private String number;
 
-    @NotNull
     private String court;
 
     private String briefContext;
 
     private ProcessStatus processStatus;
 
-    @NotNull
     private PoliticalIdDTO political;
 
     private StateDTO state;
