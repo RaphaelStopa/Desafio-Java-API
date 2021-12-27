@@ -17,10 +17,7 @@ public class StateDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
-    @Size(min = 4, max = 32)
     private String name;
 
-    @NotNull
     private String acronym;
 }

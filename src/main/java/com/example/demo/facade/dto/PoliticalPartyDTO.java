@@ -17,9 +17,7 @@ public class PoliticalPartyDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
     private String name;
 
-    @Size(max = 10)
     private String acronym;
 }

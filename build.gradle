@@ -100,9 +100,6 @@ dependencies {
 	implementation "com.zaxxer:HikariCP"
 
 
-//	implementation "io.dropwizard.metrics:metrics-core"
-//	implementation "io.micrometer:micrometer-registry-prometheus"
-
 	implementation 'org.bitbucket.gt_tech:spring-data-querydsl-value-operators:4.0.0'
 
 

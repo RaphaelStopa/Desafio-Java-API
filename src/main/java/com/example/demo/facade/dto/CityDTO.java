@@ -16,9 +16,7 @@ public class CityDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
     private String name;
 
-    @NotNull
     private StateDTO state;
 }
