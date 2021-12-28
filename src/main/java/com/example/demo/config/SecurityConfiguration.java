@@ -43,7 +43,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         httpSecurity
                 .csrf()
                 .disable()
-                // todo escrever no base que a ordem importa!!!!!!
                 .authorizeRequests()
                 .antMatchers("/api/authenticate/**").permitAll()
                 .antMatchers("/api/register/**").permitAll()
@@ -72,7 +71,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/i18n/**")
                 .antMatchers("/content/**")
                 .antMatchers("/swagger-ui/**")
-                .antMatchers("/v2/api-docs", "/configuration/ui",
+                .antMatchers("/v2/api-docs/**", "/configuration/ui",
                         "/swagger-resources/**", "/configuration/**", "/swagger-ui.html"
                         , "/webjars/**", "/csrf")
                 .antMatchers("/test/**");

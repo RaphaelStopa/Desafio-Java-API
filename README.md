@@ -41,6 +41,9 @@ Possui duvidas em relação a minha abordagem quanto a este projeto? Para isto, 
 src/docs/asciidocs
 ```
 
+## OpenAPI/Swagger
+Este projeto possui uma documentação feita com OpenAPI. Para vê-la acesse: http://localhost:8080/swagger-ui/index.html
+
 ## Tarefas pedidas.
 - [X] Popular o banco (acontece já na inicialização).
 - [x] Ter dois perfis de acesso, um user e outro admin.

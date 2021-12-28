@@ -36,10 +36,8 @@ public class UserJWTController {
 
     @PostMapping("/authenticate")
     public ResponseEntity<JWTToken> authorize(@Valid @RequestBody LoginVM loginVM) {
-        // todo ver aqui https://dev.to/nilmadhabmondal/let-s-implement-basic-jwt-based-authentication-in-spring-boot-5ec4
-        var email = userServiceImpl.findEmailByLogin(loginVM.getUser());
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
-                email,
+                loginVM.getUser(),
                 loginVM.getPassword()
         );
 

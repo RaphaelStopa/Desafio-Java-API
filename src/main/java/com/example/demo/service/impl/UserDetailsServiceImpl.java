@@ -36,12 +36,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     //tem que ser username aqui como nome do lace
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        com.example.demo.domain.User usuario = userRepository.findByEmail(username)
-                .orElseThrow(() -> new UsernameNotFoundException("Email not found: " + username));
+        com.example.demo.domain.User usuario = userRepository.findOneByLogin(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Login not found: " + username));
 
         return User
                 .builder()
-                .username(usuario.getEmail())
+                .username(usuario.getLogin())
                 .password(usuario.getPassword())
                 .authorities(mapToGrantedAuthorities(usuario.getAuthorities()))
                 .build();
