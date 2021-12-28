@@ -17,7 +17,6 @@ public class JwtProvider {
 
     private static final String AUTHORITIES_KEY = "auth";
 
-    // todo deve ter jeito de fazer iso melhor
     @Value("${jwt.base64-secret}")
     private String secret;
 

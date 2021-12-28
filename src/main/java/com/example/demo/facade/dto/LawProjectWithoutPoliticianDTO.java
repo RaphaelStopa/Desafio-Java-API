@@ -3,8 +3,6 @@ package com.example.demo.facade.dto;
 import com.example.demo.domain.enumeration.LawProjectType;
 import lombok.*;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @ToString

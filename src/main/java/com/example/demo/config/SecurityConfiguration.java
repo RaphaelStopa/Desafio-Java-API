@@ -22,6 +22,8 @@ import static org.springframework.http.HttpMethod.OPTIONS;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
+    private static final String ADMIN = "ADMIN";
+
     @Autowired
     private UserDetailsServiceImpl userDetailsServiceImpl;
 
@@ -46,15 +48,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/api/authenticate/**").permitAll()
                 .antMatchers("/api/register/**").permitAll()
-                .antMatchers("/api/adresses/**").hasRole("ADMIN")
-                .antMatchers("/api/cities/**").hasRole("ADMIN")
-                .antMatchers("/api/law-projects/**").hasRole("ADMIN")
-                .antMatchers("/api/phones/**").hasRole("ADMIN")
-                .antMatchers("/api/photos/**").hasRole("ADMIN")
-                .antMatchers("/api/political-parties/**").hasRole("ADMIN")
-                .antMatchers("/api/processes/**").hasRole("ADMIN")
-                .antMatchers("/api/states/**").hasRole("ADMIN")
-                .antMatchers("/api/states/**").hasRole("ADMIN")
+                .antMatchers("/api/adresses/**").hasRole(ADMIN)
+                .antMatchers("/api/cities/**").hasRole(ADMIN)
+                .antMatchers("/api/law-projects/**").hasRole(ADMIN)
+                .antMatchers("/api/phones/**").hasRole(ADMIN)
+                .antMatchers("/api/photos/**").hasRole(ADMIN)
+                .antMatchers("/api/political-parties/**").hasRole(ADMIN)
+                .antMatchers("/api/processes/**").hasRole(ADMIN)
+                .antMatchers("/api/states/**").hasRole(ADMIN)
                 .antMatchers("/api/**").authenticated()
                 .and()
                 .sessionManagement()

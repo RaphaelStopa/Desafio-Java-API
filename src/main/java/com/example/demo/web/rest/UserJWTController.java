@@ -1,7 +1,6 @@
 package com.example.demo.web.rest;
 
 import com.example.demo.security.jwt.JwtProvider;
-import com.example.demo.service.impl.UserServiceImpl;
 import com.example.demo.web.rest.vm.LoginVM;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.http.HttpHeaders;
@@ -24,13 +23,10 @@ public class UserJWTController {
 
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
 
-    private final UserServiceImpl userServiceImpl;
-
     private JwtProvider jwtProvider;
 
-    public UserJWTController(AuthenticationManagerBuilder authenticationManagerBuilder, UserServiceImpl userServiceImpl, JwtProvider jwtProvider) {
+    public UserJWTController(AuthenticationManagerBuilder authenticationManagerBuilder, JwtProvider jwtProvider) {
         this.authenticationManagerBuilder = authenticationManagerBuilder;
-        this.userServiceImpl = userServiceImpl;
         this.jwtProvider = jwtProvider;
     }
 

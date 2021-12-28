@@ -20,9 +20,6 @@ import java.util.Set;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-    //equivale ao UserDetailsServiceImpl e DomainUserDetailsService, fiz um no mvc tambem
-
-
     private UserRepository userRepository;
 
     private PasswordEncoder passwordEncoder;
@@ -32,8 +29,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    //TODO see if there's another way to fix it without the transitional
-    //tem que ser username aqui como nome do lace
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         com.example.demo.domain.User usuario = userRepository.findOneByLogin(username)

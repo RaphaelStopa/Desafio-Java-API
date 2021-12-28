@@ -1,12 +1,7 @@
 package com.example.demo.facade.dto;
 
 import java.time.Instant;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
-import com.example.demo.config.Constants;
 import lombok.*;
 
 @Getter
@@ -38,10 +33,4 @@ public class AdminUserDTO {
     private String lastModifiedBy;
 
     private Instant lastModifiedDate;
-
-    // todo, nao mapeia as autjhorities tem que ever o que poder ser feito
-//    private Set<String> authorities;
-
-
-
 }

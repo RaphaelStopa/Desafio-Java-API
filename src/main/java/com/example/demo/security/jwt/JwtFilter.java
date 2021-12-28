@@ -33,7 +33,6 @@ public class JwtFilter extends OncePerRequestFilter {
         String token = request.getHeader(AUTH_HEADER);
 
         if (token != null && token.startsWith(BEARER_PREFIX)) {
-            //todo, this is an example
             token = token.substring(7);
             user = jwtProvider.getUser(token);
         }
