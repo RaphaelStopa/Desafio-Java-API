@@ -2,7 +2,7 @@ package com.example.demo.facade.dto;
 
 import lombok.*;
 
-import javax.validation.constraints.NotNull;
+
 import java.io.Serializable;
 
 @ToString

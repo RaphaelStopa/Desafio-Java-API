@@ -4,7 +4,6 @@ package com.example.demo.facade.dto;
 import com.example.demo.domain.enumeration.ProcessStatus;
 import lombok.*;
 
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @ToString

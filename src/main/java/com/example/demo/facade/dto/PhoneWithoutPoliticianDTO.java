@@ -4,7 +4,6 @@ import com.example.demo.domain.enumeration.PhoneType;
 import com.example.demo.domain.enumeration.UseType;
 import lombok.*;
 
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @ToString
