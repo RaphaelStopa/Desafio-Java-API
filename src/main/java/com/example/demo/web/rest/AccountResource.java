@@ -25,11 +25,8 @@ public class AccountResource {
         this.userServiceImpl = userServiceImpl;
     }
 
-    //TODO roles as they are are not working either
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
-    //@PreAuthorize("hasAnyRole('ROLE_USER')")
-    //@Secured({ AuthoritiesConstants.ADMIN })
     public void registerAccount(@Valid @RequestBody ManagedUserVM managedUserVM){
         if (isPasswordLengthInvalid(managedUserVM.getPassword())) {
             throw BusinessException.by(ErrorConstants.INVALID_PASSWORD).get();
@@ -44,7 +41,6 @@ public class AccountResource {
         }
         userServiceImpl.changePassword(passwordChangeDto.getCurrentPassword(), passwordChangeDto.getNewPassword());
     }
-
 
     private static boolean isPasswordLengthInvalid(String password) {
         return (
